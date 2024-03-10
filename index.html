@@ -1,44 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Physiotherapy Doctor</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hemisha Sheth</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .card-scroll {
+            display: flex;
+            overflow-x: auto ;
+            scrollbar-width: thin; /* For Firefox */
+            scrollbar-color: rgba(255, 255, 255, 0.7) rgba(255, 255, 255, 0.3); /* For Firefox */
+        }
+        .card-scroll::-webkit-scrollbar {
+            height: 8px; /* Height of the scrollbar */
+        }
+        .card-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+        }
+        .card-scroll .card {
+            flex: 0 0 300px; /* Fixed width for each card */
+            margin-right: 10px; /* Margin between cards */
+            position: relative;
+            perspective: 1000px;
+            width: 300px;
+            height: 320px;
+            border-radius: 10px;
+            overflow: hidden; /* Ensure image does not overflow */
+        }
+        .card {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: filter 0.5s ease;
+        }
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 0;
+            border-radius: 0px 0px 10px 10px;
+            word-break: keep-all; 
+            text-align: center;
+            font-size: 1.2rem;
+            transition: bottom 0.5s, width 0.5s;
+        }
+        .card-definition {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 0;
+            border-radius: 0px 0px 10px 10px;
+            word-break:keep-all; 
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: bottom 0.5s, opacity 0.5s;
+        }
+        .card:hover img {
+            filter: blur(5px);
+        }
+        .card:hover .card-title {
+            top: 0;
+            border-radius: 10px 10px 0px 0px ;
+            font-size: 1rem;
+            max-height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card:hover .card-definition {
+            top: 70px;
+            opacity: 1;
+        }
+        .bg-dark.text-light {
+            background-color: #343a40;
+            color: white;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        .navbar-dark .navbar-brand {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .navbar-dark .navbar-brand:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <h1>About Me</h1>
-      </div>
-      <div class="card-body">
-        <p>Welcome to my physiotherapy practice. I am dedicated to helping you achieve your optimal health and wellness through personalized care and treatment plans.</p>
-      </div>
+<body class="bg-dark text-light">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Dr. Hemisha Sheth</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#therapy">Therapy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <section id="about">
+            <h2>About</h2>
+            <p>Welcome to the practice of Dr. Hemisha Sheth. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis fringilla leo, in tincidunt velit. Integer consequat faucibus magna, vitae tincidunt justo lobortis sit amet.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <div class="card-scroll">
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Musculoskeletal rehabilitation">
+                    <div class="card-title">Musculoskeletal Rehabilitation</div>
+                    <div class="card-definition">Specialized rehabilitation focusing on the musculoskeletal system, aiding in recovery from injuries or surgeries related to bones, muscles, ligaments, and tendons.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Stroke rehabilitation">
+                    <div class="card-title">Stroke Rehabilitation</div>
+                    <div class="card-definition">Tailored rehabilitation programs for individuals recovering from strokes, aiming to restore mobility, speech, and cognitive functions.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Cardiovascular and respiratory rehabilitation">
+                    <div class="card-title">Cardiovascular and Respiratory Rehabilitation</div>
+                    <div class="card-definition">Rehabilitation plans designed to improve heart and lung health, often after cardiac surgeries, heart attacks, or respiratory conditions.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Geriatric rehabilitation">
+                    <div class="card-title">Geriatric Rehabilitation</div>
+                    <div class="card-definition">Rehabilitation services for elderly individuals to address age-related conditions, improve mobility, and enhance quality of life.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Obesity and fitness">
+                    <div class="card-title">Obesity and Fitness</div>
+                    <div class="card-definition">Guidance and programs focusing on weight management, fitness training, and lifestyle changes to combat obesity and improve overall health.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Post operative physiotherapy and rehabilitation">
+                    <div class="card-title">Post Operative Physiotherapy and Rehabilitation</div>
+                    <div class="card-definition">Tailored rehabilitation plans post-surgery to aid in recovery, restore function, and prevent complications.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Ergonomic training">
+                    <div class="card-title">Ergonomic Training</div>
+                    <div class="card-definition">Education and training on ergonomic principles to prevent workplace injuries and improve posture and comfort.</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="therapy">
+            <h2>Therapy</h2>
+            <div class="card-scroll">
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Manual mobilisation">
+                    <div class="card-title">Manual Mobilisation</div>
+                    <div class="card-definition">Hands-on therapy techniques to improve joint mobility, reduce pain, and restore function.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Soft tissue release">
+                    <div class="card-title">Soft Tissue Release</div>
+                    <div class="card-definition">Techniques to release tension and improve flexibility in muscles, tendons, and fascia.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Postural training">
+                    <div class="card-title">Postural Training</div>
+                    <div class="card-definition">Exercises and education to correct and maintain proper posture, reducing strain on the body.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Neurodynamics">
+                    <div class="card-title">Neurodynamics</div>
+                    <div class="card-definition">Techniques to assess and treat nerve mobility and function, often used for nerve-related pain.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Cupping therapy">
+                    <div class="card-title">Cupping Therapy</div>
+                    <div class="card-definition">Ancient therapy using suction cups to improve blood flow, reduce inflammation, and promote healing.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Ultrasound">
+                    <div class="card-title">Ultrasound Therapy</div>
+                    <div class="card-definition">Therapeutic ultrasound waves used to stimulate tissue repair, reduce inflammation, and relieve pain.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="TENS - trans electrical nerve stimulation">
+                    <div class="card-title">TENS - Trans Electrical Nerve Stimulation</div>
+                    <div class="card-definition">Electrical stimulation therapy to relieve pain by blocking pain signals and promoting endorphin release.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Electrical muscle stimulation">
+                    <div class="card-title">Electrical Muscle Stimulation</div>
+                    <div class="card-definition">Use of electrical impulses to activate muscle contractions, aiding in muscle strengthening and rehabilitation.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Muscle energy technique">
+                    <div class="card-title">Muscle Energy Technique</div>
+                    <div class="card-definition">Manual therapy technique involving active and passive muscle contractions to improve joint function and reduce pain.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Foam roller exercises">
+                    <div class="card-title">Foam Roller Exercises</div>
+                    <div class="card-definition">Exercises using a foam roller to improve flexibility, release muscle tension, and prevent injuries.</div>
+                </div>
+                <div class="card">
+                    <img src="test.PNG" class="card-img-top" alt="Proprioception and balance exercises">
+                    <div class="card-title">Proprioception and Balance Exercises</div>
+                    <div class="card-definition">Exercises to enhance proprioception (awareness of body position) and balance, crucial for injury prevention and rehabilitation.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Contact Dr. Hemisha Sheth for appointments and inquiries:</p>
+            <p>Email: example@example.com</p>
+            <p>Phone: 123-456-7890</p>
+        </section>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        <h1>Services</h1>
-      </div>
-      <div class="card-body">
-        <ul>
-          <li>Physical Therapy</li>
-          <li>Sports Injury Rehabilitation</li>
-          <li>Post-Surgical Rehabilitation</li>
-          <li>Geriatric Physical Therapy</li>
-        </ul>
-      </div>
-    </div>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Dr. Hemisha Sheth</p>
+    </footer>
 
-    <div class="card">
-      <div class="card-header">
-        <h1>Therapy</h1>
-      </div>
-      <div class="card-body">
-        <p>I use a combination of manual therapy, exercise prescription, and patient education to help you recover from injuries and improve your overall well-being.</p>
-      </div>
-    </div>
-  </div>
+    <!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
